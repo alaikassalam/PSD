@@ -4,6 +4,6 @@
 format: jb-book
 root: intro
 chapters:
-- file: per-1
-  sections: 
-    - file: subper-1
+- file: materi1
+- file: materi2
+- file: materi3
