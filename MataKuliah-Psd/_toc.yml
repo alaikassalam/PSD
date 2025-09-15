@@ -4,6 +4,9 @@
 format: jb-book
 root: intro
 chapters:
-- file: materi1
-- file: materi2
-- file: materi3
+- file: businessUnderstanding
+- file: dataUnderstanding
+  sections:
+    - file: explorasiData
+- file: dataPreparation
+- file: materi4
