@@ -280,3 +280,11 @@
 2025-09-15 17:11:29,327:INFO:_display_container: 1
 2025-09-15 17:11:29,328:INFO:ABOD(contamination=0.05, method='fast', n_neighbors=5)
 2025-09-15 17:11:29,328:INFO:create_model() successfully completed......................................
+2025-09-15 17:11:37,385:INFO:Initializing assign_model()
+2025-09-15 17:11:37,386:INFO:assign_model(self=<pycaret.anomaly.oop.AnomalyExperiment object at 0x00000202B10DACD0>, model=ABOD(contamination=0.05, method='fast', n_neighbors=5), transformation=False, score=True, verbose=True)
+2025-09-15 17:11:37,386:INFO:Checking exceptions
+2025-09-15 17:11:37,386:INFO:Determining Trained Model
+2025-09-15 17:11:37,386:INFO:Trained Model : Angle-base Outlier Detection
+2025-09-15 17:11:37,387:INFO:Copying data
+2025-09-15 17:11:37,390:INFO:(150, 7)
+2025-09-15 17:11:37,390:INFO:assign_model() successfully completed......................................
