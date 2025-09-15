@@ -8,6 +8,7 @@ chapters:
 - file: dataUnderstanding
   sections:
     - file: explorasiData
-- file: dataPreparation
+- file: dataPreprocessing
   sections:
+    - file: knnkmeans
     - file: abod

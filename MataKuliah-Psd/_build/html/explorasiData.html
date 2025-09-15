@@ -28,24 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=720ed60b" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=d2032c04" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=720ed60b" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/bootstrap.css?v=b4a3e8ba" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/theme.css?v=a243ae73" />
-    <link rel="stylesheet" type="text/css" href="_static/vendor/fontawesome/6.5.2/css/all.min.css?v=f4fbef65" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -69,24 +58,9 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'explorasiData';</script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/copybutton_funcs.js?v=776a791e"></script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/language_data.js?v=d4673a71"></script>
-    <script src="_static/searchtools.js?v=63a53a7d"></script>
-    <script src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="_static/scripts/bootstrap.js?v=7583a70d"></script>
-    <script src="_static/scripts/pydata-sphinx-theme.js?v=4bc35cb3"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?v=4e4fcec4"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="dataPreparation.html" />
+    <link rel="next" title="&lt;no title&gt;" href="dataPreprocessing.html" />
     <link rel="prev" title="Data Understanding" href="dataUnderstanding.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -201,7 +175,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Proyek Sain Data
                 </a>
             </li>
         </ul>
@@ -211,6 +185,7 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Explorasi Data</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="knnkmeans.html">KNN &amp; K-means</a></li>
 <li class="toctree-l1"><a class="reference internal" href="abod.html">Deteksi Outlier ABOD</a></li>
 </ul>
 
@@ -420,6 +395,7 @@ document.write(`
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code">Source Code</a></li>
 </ul>
             </nav>
         </div>
@@ -471,14 +447,14 @@ Jika relevan, dilakukan segmentasi untuk mengenali kelompok dalam data.</p></li>
 <section id="tipe-data-dataset">
 <h3>Tipe Data Dataset<a class="headerlink" href="#tipe-data-dataset" title="Link to this heading">#</a></h3>
 <p>Pertama tentukan terlebih dahulu tipe data dari setiap kolom yang ada pada dataset, cara tinggal pilih menu Transform data
-<img alt="image1" src="_images/image1.png" /></p>
+<img alt="image1" src="asset/image1.png" /></p>
 </section>
 <section id="kualitas-data">
 <h3>Kualitas Data<a class="headerlink" href="#kualitas-data" title="Link to this heading">#</a></h3>
 <section id="melihat-outlier">
 <h4>Melihat Outlier<a class="headerlink" href="#melihat-outlier" title="Link to this heading">#</a></h4>
 <p>Untuk melihar Outlier disini saya menggunakan kode python, yang nantinya hasilnya seperti berikut<br />
-<img alt="image1" src="asset/image3.jpg" /></p>
+<img alt="image3" src="asset/image3.png" /></p>
 </section>
 <section id="konsistensi-data">
 <h4>Konsistensi Data<a class="headerlink" href="#konsistensi-data" title="Link to this heading">#</a></h4>
@@ -489,9 +465,68 @@ Jika relevan, dilakukan segmentasi untuk mengenali kelompok dalam data.</p></li>
 <li><p>Column profile</p></li>
 </ul>
 <p>Untuk hasilnya seperti pada gambar berikut:<br />
-<img alt="image1" src="_images/image2.png" /></p>
+<img alt="image1" src="asset/image2.png" /></p>
 </section>
 </section>
+</section>
+<section id="source-code">
+<h2>Source Code<a class="headerlink" href="#source-code" title="Link to this heading">#</a></h2>
+<p>Berikut untuk Source codenya</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Library sesuai dengan kebutuhan</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">psycopg2</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">psycopg2</span><span class="w"> </span><span class="kn">import</span> <span class="n">sql</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">psycopg2</span><span class="w"> </span><span class="kn">import</span> <span class="n">sql</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Konfigurasi koneksi Aiven PostgreSQL</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;HOST_AIVENMU&quot;</span><span class="p">,</span>        <span class="c1"># contoh: mydb-psql.aivencloud.com</span>
+    <span class="n">port</span><span class="o">=</span><span class="s2">&quot;PORT_AIVENMU&quot;</span><span class="p">,</span>        <span class="c1"># contoh: 22272</span>
+    <span class="n">dbname</span><span class="o">=</span><span class="s2">&quot;DBNAME_AIVENMU&quot;</span><span class="p">,</span>    <span class="c1"># nama database</span>
+    <span class="n">user</span><span class="o">=</span><span class="s2">&quot;USERNAME_AIVENMU&quot;</span><span class="p">,</span>    <span class="c1"># user dari Aiven</span>
+    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;PASSWORD_AIVENMU&quot;</span><span class="p">,</span><span class="c1"># password dari Aiven</span>
+    <span class="n">sslmode</span><span class="o">=</span><span class="s2">&quot;require&quot;</span>           <span class="c1"># Aiven biasanya butuh SSL</span>
+<span class="p">)</span>
+
+<span class="c1"># Query dataset</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">SELECT * FROM dataset_psd;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1"># Load ke pandas DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
+
+<span class="c1"># Tutup koneksi</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># Hasil untuk Power BI</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -535,7 +570,7 @@ Jika relevan, dilakukan segmentasi untuk mengenali kelompok dalam data.</p></li>
       </div>
     </a>
     <a class="right-next"
-       href="dataPreparation.html"
+       href="dataPreprocessing.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -572,6 +607,7 @@ Jika relevan, dilakukan segmentasi untuk mengenali kelompok dalam data.</p></li>
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code">Source Code</a></li>
 </ul>
   </nav></div>
 
