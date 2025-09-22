@@ -398,7 +398,12 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code">Source Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code">Source Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-yang-dibutuhkan">Import library yang dibutuhkan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">Load dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-koneksi-engine-dan-mengambil-dari-database">Membuat koneksi (engine) dan mengambil dari database</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -475,6 +480,8 @@ Jika relevan, dilakukan segmentasi untuk mengenali kelompok dalam data.</p></li>
 <section id="source-code">
 <h2>Source Code<a class="headerlink" href="#source-code" title="Link to this heading">#</a></h2>
 <p>Berikut untuk Source codenya</p>
+<section id="import-library-yang-dibutuhkan">
+<h3>Import library yang dibutuhkan<a class="headerlink" href="#import-library-yang-dibutuhkan" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Library sesuai dengan kebutuhan</span>
@@ -484,52 +491,71 @@ Jika relevan, dilakukan segmentasi untuk mengenali kelompok dalam data.</p></li>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">psycopg2</span><span class="w"> </span><span class="kn">import</span> <span class="n">sql</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KeyboardInterrupt
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="load-dataset">
+<h3>Load dataset<a class="headerlink" href="#load-dataset" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Konfigurasi koneksi Aiven PostgreSQL</span>
-<span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
-    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;HOST_AIVENMU&quot;</span><span class="p">,</span>        <span class="c1"># contoh: mydb-psql.aivencloud.com</span>
-    <span class="n">port</span><span class="o">=</span><span class="s2">&quot;PORT_AIVENMU&quot;</span><span class="p">,</span>        <span class="c1"># contoh: 22272</span>
-    <span class="n">dbname</span><span class="o">=</span><span class="s2">&quot;DBNAME_AIVENMU&quot;</span><span class="p">,</span>    <span class="c1"># nama database</span>
-    <span class="n">user</span><span class="o">=</span><span class="s2">&quot;USERNAME_AIVENMU&quot;</span><span class="p">,</span>    <span class="c1"># user dari Aiven</span>
-    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;PASSWORD_AIVENMU&quot;</span><span class="p">,</span><span class="c1"># password dari Aiven</span>
-    <span class="n">sslmode</span><span class="o">=</span><span class="s2">&quot;require&quot;</span>           <span class="c1"># Aiven biasanya butuh SSL</span>
-<span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">load_dotenv</span><span class="p">()</span>
 
-<span class="c1"># Query dataset</span>
-<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">SELECT * FROM dataset_psd;</span>
-<span class="s2">&quot;&quot;&quot;</span>
+<span class="c1"># Ambil variabel dari .env</span>
+<span class="n">user_postgres</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;USER_POSTGRES&quot;</span><span class="p">)</span>
+<span class="n">password_postgres</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PASS_POSTGRES&quot;</span><span class="p">)</span>
+<span class="n">host_postgres</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;HOST_POSTGRES&quot;</span><span class="p">)</span>
+<span class="n">port_postgres</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PORT_POSTGRES&quot;</span><span class="p">)</span>
+<span class="n">db_postgres</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;DB_POSTGRES&quot;</span><span class="p">)</span>
 
-<span class="c1"># Load ke pandas DataFrame</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
+<span class="n">user_mysql</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;USER_MYSQL&quot;</span><span class="p">)</span>
+<span class="n">password_mysql</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PASS_MYSQL&quot;</span><span class="p">)</span>
+<span class="n">host_mysql</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;HOST_MYSQL&quot;</span><span class="p">)</span>
+<span class="n">port_mysql</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;PORT_MYSQL&quot;</span><span class="p">)</span>
+<span class="n">db_mysql</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;DB_MYSQL&quot;</span><span class="p">)</span>
 
-<span class="c1"># Tutup koneksi</span>
-<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-<span class="c1"># Hasil untuk Power BI</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">df</span>
+<span class="n">postgres_conn</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;postgresql+psycopg2://</span><span class="si">{</span><span class="n">user_postgres</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">password_postgres</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">host_postgres</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">port_postgres</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">db_postgres</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">mysql_conn</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;mysql+pymysql://</span><span class="si">{</span><span class="n">user_mysql</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">password_mysql</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">host_mysql</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">port_mysql</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">db_mysql</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">postgres_engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">postgres_conn</span><span class="p">)</span>
+<span class="n">postgres_engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">mysql_conn</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="membuat-koneksi-engine-dan-mengambil-dari-database">
+<h3>Membuat koneksi (engine) dan mengambil dari database<a class="headerlink" href="#membuat-koneksi-engine-dan-mengambil-dari-database" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Engine untuk PostgreSQL</span>
+<span class="n">postgres_engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">postgres_conn</span><span class="p">)</span>
+
+<span class="c1"># Engine untuk MySQL</span>
+<span class="n">mysql_engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="n">mysql_conn</span><span class="p">)</span>
+
+
+<span class="c1"># Ambil data dari MySQL</span>
+<span class="n">mysql_df_iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM iris_full&quot;</span><span class="p">,</span> <span class="n">mysql_engine</span><span class="p">)</span>
+
+<span class="c1"># Ambil data dari PostgreSQL</span>
+<span class="n">postgres_df_iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM iris_full&quot;</span><span class="p">,</span> <span class="n">postgres_engine</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -610,7 +636,12 @@ Jika relevan, dilakukan segmentasi untuk mengenali kelompok dalam data.</p></li>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code">Source Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code">Source Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-yang-dibutuhkan">Import library yang dibutuhkan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">Load dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-koneksi-engine-dan-mengambil-dari-database">Membuat koneksi (engine) dan mengambil dari database</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

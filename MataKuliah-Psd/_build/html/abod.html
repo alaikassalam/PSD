@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,7 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'abod';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="KNN &amp; K-means" href="knnkmeans.html" />
+    <link rel="next" title="Menyeimbangkan Data menggunakan SMOTE" href="ketidakseimbanganData.html" />
+    <link rel="prev" title="Data Preprocessing" href="dataPreprocessing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,9 +187,9 @@
 <li class="toctree-l2"><a class="reference internal" href="explorasiData.html">Explorasi Data</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="dataPreprocessing.html"><em><strong>Data Preproscessing</strong></em></a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="knnkmeans.html">KNN &amp; K-means</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dataPreprocessing.html">Data Preprocessing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Deteksi Outlier ABOD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ketidakseimbanganData.html">Menyeimbangkan Data menggunakan SMOTE</a></li>
 </ul>
 </details></li>
 </ul>
@@ -452,19 +453,6 @@ ABOD(p_i) = \mathrm{Var}(\theta_{ijk}) \quad \text{untuk semua } j, k \neq i
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;dotenv&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="load-dataset">
@@ -529,20 +517,46 @@ ABOD(p_i) = \mathrm{Var}(\theta_{ijk}) \quad \text{untuk semua } j, k \neq i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      id  petal length  petal width  sepal length  sepal width
-0      1           1.4          0.2           5.1          3.5
-1      2           1.4          0.2           4.9          3.0
-2      3           1.3          0.2           4.7          3.2
-3      4           1.5          0.2           4.6          3.1
-4      5           1.4          0.2           5.0          3.6
-..   ...           ...          ...           ...          ...
-145  146           5.2          2.3           6.7          3.0
-146  147           5.0          1.9           6.3          2.5
-147  148           5.2          2.0           6.5          3.0
-148  149           5.4          2.3           6.2          3.4
-149  150           5.1          1.8           5.9          3.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      id  petal length_x  petal width_x Class_x sepal length_x sepal width_x  \
+0      1             NaN            NaN     NaN            NaN           NaN   
+1      1             NaN            NaN     NaN            NaN           NaN   
+2      2             NaN            NaN     NaN            NaN           NaN   
+3      2             NaN            NaN     NaN            NaN           NaN   
+4      3             NaN            NaN     NaN            NaN           NaN   
+..   ...             ...            ...     ...            ...           ...   
+295  148             5.2            2.0    None           None          None   
+296  149             5.4            2.3    None           None          None   
+297  149             5.4            2.3    None           None          None   
+298  150             5.1            1.8    None           None          None   
+299  150             5.1            1.8    None           None          None   
 
-[150 rows x 5 columns]
+     sepal length_y  sepal width_y         Class_y  petal length_y  \
+0               5.1            3.5            None             NaN   
+1               5.1            3.5     Iris-setosa             1.4   
+2               4.9            3.0            None             NaN   
+3               4.9            3.0     Iris-setosa             1.4   
+4               4.7            3.2            None             NaN   
+..              ...            ...             ...             ...   
+295             6.5            3.0  Iris-virginica             5.2   
+296             6.2            3.4            None             NaN   
+297             6.2            3.4  Iris-virginica             5.4   
+298             5.9            3.0            None             NaN   
+299             5.9            3.0  Iris-virginica             5.1   
+
+     petal width_y  
+0              NaN  
+1              0.2  
+2              NaN  
+3              0.2  
+4              NaN  
+..             ...  
+295            2.0  
+296            NaN  
+297            2.3  
+298            NaN  
+299            1.8  
+
+[300 rows x 11 columns]
 </pre></div>
 </div>
 </div>
@@ -563,217 +577,54 @@ ABOD(p_i) = \mathrm{Var}(\theta_{ijk}) \quad \text{untuk semua } j, k \neq i
 <h3>Model ABOD<a class="headerlink" href="#model-abod" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pycaret.anomaly</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pycaret.anomaly</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
-<span class="c1"># Setup PyCaret untuk anomaly detection</span>
-<span class="n">exp_ano</span> <span class="o">=</span> <span class="n">setup</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data_train</span><span class="p">)</span>
+<span class="c1"># === 1. Pastikan dataset sudah ada ===</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah baris:&quot;</span><span class="p">,</span> <span class="n">data_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah kolom:&quot;</span><span class="p">,</span> <span class="n">data_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kolom dataset:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">data_train</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data_train</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
-<span class="c1"># Buat model ABOD</span>
+<span class="c1"># === 2. Pilih hanya kolom numerik (biar PyCaret tidak error) ===</span>
+<span class="n">fitur</span> <span class="o">=</span> <span class="n">data_train</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="s1">&#39;float64&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Kolom numerik yang dipakai untuk anomaly detection:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">fitur</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+
+<span class="c1"># === 3. Setup PyCaret Anomaly Detection (versi terbaru) ===</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pycaret.anomaly</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">create_model</span><span class="p">,</span> <span class="n">assign_model</span>
+<span class="n">exp_ano</span> <span class="o">=</span> <span class="n">setup</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">fitur</span><span class="p">,</span>
+    <span class="n">session_id</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="c1"># === 4. Buat model ABOD ===</span>
 <span class="n">abod_model</span> <span class="o">=</span> <span class="n">create_model</span><span class="p">(</span><span class="s1">&#39;abod&#39;</span><span class="p">)</span>
 
-<span class="c1"># Assign label outlier ke setiap baris</span>
+<span class="c1"># === 5. Assign label anomaly ===</span>
 <span class="n">dataset_outliers</span> <span class="o">=</span> <span class="n">assign_model</span><span class="p">(</span><span class="n">abod_model</span><span class="p">)</span>
 
-<span class="c1"># Hapus baris yang dianggap outlier</span>
+<span class="c1"># === 6. Hapus baris outlier (Anomaly == 1 artinya normal, -1 artinya outlier) ===</span>
 <span class="n">dataset_clean</span> <span class="o">=</span> <span class="n">dataset_outliers</span><span class="p">[</span><span class="n">dataset_outliers</span><span class="p">[</span><span class="s1">&#39;Anomaly&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
 
-<span class="n">dataset_clean</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Jumlah data awal:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset_outliers</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah data setelah outlier dihapus:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset_clean</span><span class="p">))</span>
+<span class="n">dataset_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style type="text/css">
-#T_dba11_row4_col1 {
-  background-color: lightgreen;
-}
-</style>
-<table id="T_dba11">
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th id="T_dba11_level0_col0" class="col_heading level0 col0" >Description</th>
-      <th id="T_dba11_level0_col1" class="col_heading level0 col1" >Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_dba11_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_dba11_row0_col0" class="data row0 col0" >Session id</td>
-      <td id="T_dba11_row0_col1" class="data row0 col1" >890</td>
-    </tr>
-    <tr>
-      <th id="T_dba11_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_dba11_row1_col0" class="data row1 col0" >Original data shape</td>
-      <td id="T_dba11_row1_col1" class="data row1 col1" >(150, 5)</td>
-    </tr>
-    <tr>
-      <th id="T_dba11_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_dba11_row2_col0" class="data row2 col0" >Transformed data shape</td>
-      <td id="T_dba11_row2_col1" class="data row2 col1" >(150, 5)</td>
-    </tr>
-    <tr>
-      <th id="T_dba11_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_dba11_row3_col0" class="data row3 col0" >Numeric features</td>
-      <td id="T_dba11_row3_col1" class="data row3 col1" >5</td>
-    </tr>
-    <tr>
-      <th id="T_dba11_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_dba11_row4_col0" class="data row4 col0" >Preprocess</td>
-      <td id="T_dba11_row4_col1" class="data row4 col1" >True</td>
-    </tr>
-    <tr>
-      <th id="T_dba11_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_dba11_row5_col0" class="data row5 col0" >Imputation type</td>
-      <td id="T_dba11_row5_col1" class="data row5 col1" >simple</td>
-    </tr>
-    <tr>
-      <th id="T_dba11_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_dba11_row6_col0" class="data row6 col0" >Numeric imputation</td>
-      <td id="T_dba11_row6_col1" class="data row6 col1" >mean</td>
-    </tr>
-    <tr>
-      <th id="T_dba11_level0_row7" class="row_heading level0 row7" >7</th>
-      <td id="T_dba11_row7_col0" class="data row7 col0" >Categorical imputation</td>
-      <td id="T_dba11_row7_col1" class="data row7 col1" >mode</td>
-    </tr>
-    <tr>
-      <th id="T_dba11_level0_row8" class="row_heading level0 row8" >8</th>
-      <td id="T_dba11_row8_col0" class="data row8 col0" >CPU Jobs</td>
-      <td id="T_dba11_row8_col1" class="data row8 col1" >-1</td>
-    </tr>
-    <tr>
-      <th id="T_dba11_level0_row9" class="row_heading level0 row9" >9</th>
-      <td id="T_dba11_row9_col0" class="data row9 col0" >Use GPU</td>
-      <td id="T_dba11_row9_col1" class="data row9 col1" >False</td>
-    </tr>
-    <tr>
-      <th id="T_dba11_level0_row10" class="row_heading level0 row10" >10</th>
-      <td id="T_dba11_row10_col0" class="data row10 col0" >Log Experiment</td>
-      <td id="T_dba11_row10_col1" class="data row10 col1" >False</td>
-    </tr>
-    <tr>
-      <th id="T_dba11_level0_row11" class="row_heading level0 row11" >11</th>
-      <td id="T_dba11_row11_col0" class="data row11 col0" >Experiment Name</td>
-      <td id="T_dba11_row11_col1" class="data row11 col1" >anomaly-default-name</td>
-    </tr>
-    <tr>
-      <th id="T_dba11_level0_row12" class="row_heading level0 row12" >12</th>
-      <td id="T_dba11_row12_col0" class="data row12 col0" >USI</td>
-      <td id="T_dba11_row12_col1" class="data row12 col1" >c7b1</td>
-    </tr>
-  </tbody>
-</table>
-</div><div class="output text_html"></div><div class="output text_html"></div><div class="output text_html"></div><div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pycaret.anomaly</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># === 1. Pastikan dataset sudah ada ===</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah baris:&quot;</span><span class="p">,</span> <span class="n">data_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>petal length</th>
-      <th>petal width</th>
-      <th>sepal length</th>
-      <th>sepal width</th>
-      <th>Anomaly</th>
-      <th>Anomaly_Score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>98</th>
-      <td>99</td>
-      <td>3.0</td>
-      <td>1.1</td>
-      <td>5.1</td>
-      <td>2.5</td>
-      <td>1</td>
-      <td>-0.006736</td>
-    </tr>
-    <tr>
-      <th>106</th>
-      <td>107</td>
-      <td>4.5</td>
-      <td>1.7</td>
-      <td>4.9</td>
-      <td>2.5</td>
-      <td>1</td>
-      <td>-0.001276</td>
-    </tr>
-    <tr>
-      <th>117</th>
-      <td>118</td>
-      <td>6.7</td>
-      <td>2.2</td>
-      <td>7.7</td>
-      <td>3.8</td>
-      <td>1</td>
-      <td>-0.005361</td>
-    </tr>
-    <tr>
-      <th>118</th>
-      <td>119</td>
-      <td>6.9</td>
-      <td>2.3</td>
-      <td>7.7</td>
-      <td>2.6</td>
-      <td>1</td>
-      <td>-0.005204</td>
-    </tr>
-    <tr>
-      <th>119</th>
-      <td>120</td>
-      <td>5.0</td>
-      <td>1.5</td>
-      <td>6.0</td>
-      <td>2.2</td>
-      <td>1</td>
-      <td>-0.006080</td>
-    </tr>
-    <tr>
-      <th>122</th>
-      <td>123</td>
-      <td>6.7</td>
-      <td>2.0</td>
-      <td>7.7</td>
-      <td>2.8</td>
-      <td>1</td>
-      <td>-0.004978</td>
-    </tr>
-    <tr>
-      <th>135</th>
-      <td>136</td>
-      <td>6.1</td>
-      <td>2.3</td>
-      <td>7.7</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>-0.006185</td>
-    </tr>
-    <tr>
-      <th>149</th>
-      <td>150</td>
-      <td>5.1</td>
-      <td>1.8</td>
-      <td>5.9</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>-0.006176</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pycaret&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="menghapus-data-dengan-skor-outlier-tertinggi">
@@ -796,19 +647,19 @@ ABOD(p_i) = \mathrm{Var}(\theta_{ijk}) \quad \text{untuk semua } j, k \neq i
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data setelah 2 outlier tertinggi dihapus:
-   id  petal length  petal width  sepal length  sepal width  Anomaly  \
-0   1           1.4          0.2           5.1          3.5        0   
-1   2           1.4          0.2           4.9          3.0        0   
-2   3           1.3          0.2           4.7          3.2        0   
-3   4           1.5          0.2           4.6          3.1        0   
-4   5           1.4          0.2           5.0          3.6        0   
+   id  petal length_x  petal width_x  sepal length_y  sepal width_y  \
+0  36             1.2            0.2             5.0            3.2   
+1  36             1.2            0.2             5.0            3.2   
+2  37             1.3            0.2             5.5            3.5   
+3  37             1.3            0.2             5.5            3.5   
+4  38             1.5            0.1             4.9            3.1   
 
-   Anomaly_Score  
-0      -0.010918  
-1      -0.105879  
-2      -0.160850  
-3      -0.108965  
-4      -0.103372  
+   petal length_y  petal width_y  Anomaly  Anomaly_Score  
+0             NaN            NaN        0      -0.011465  
+1             1.2            0.2        0      -0.010103  
+2             NaN            NaN        0      -0.025892  
+3             1.3            0.2        0      -0.024060  
+4             NaN            NaN        0      -0.082164  
 </pre></div>
 </div>
 </div>
@@ -848,13 +699,22 @@ ABOD(p_i) = \mathrm{Var}(\theta_{ijk}) \quad \text{untuk semua } j, k \neq i
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="knnkmeans.html"
+       href="dataPreprocessing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">KNN &amp; K-means</p>
+        <p class="prev-next-title">Data Preprocessing</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="ketidakseimbanganData.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Menyeimbangkan Data menggunakan SMOTE</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

@@ -16,12 +16,16 @@ Traceback (most recent call last):
     return future.result()
   File "D:\Laragon\laragon\bin\python\python-3.10\lib\site-packages\nbclient\client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "D:\Laragon\laragon\bin\python\python-3.10\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "D:\Laragon\laragon\bin\python\python-3.10\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
+  File "D:\Laragon\laragon\bin\python\python-3.10\lib\site-packages\nbclient\client.py", line 1005, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+  File "D:\Laragon\laragon\bin\python\python-3.10\lib\site-packages\nbclient\client.py", line 806, in _async_poll_for_reply
+    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
+  File "D:\Laragon\laragon\bin\python\python-3.10\lib\site-packages\nbclient\client.py", line 856, in _async_handle_timeout
+    raise CellTimeoutError.error_from_timeout_and_cell(
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
+The message was: Cell execution timed out.
+Here is a preview of the cell contents:
+-------------------
 # Library sesuai dengan kebutuhan
 import pandas as pd
 import psycopg2
@@ -29,16 +33,8 @@ from psycopg2 import sql
 import numpy as np
 from scipy import stats
 import matplotlib.pyplot as plt
-------------------
-
-
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [1;32mIn[1], line 6[0m
-[0;32m      4[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mpsycopg2[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m sql
-[0;32m      5[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mnp[39;00m
-[1;32m----> 6[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mscipy[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m stats
-[0;32m      7[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mplt[39;00m
-
-[1;31mModuleNotFoundError[0m: No module named 'scipy'
+import os
+from dotenv import load_dotenv
+from sqlalchemy import create_engine
+-------------------
 
