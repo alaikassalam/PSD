@@ -10,5 +10,4 @@ chapters:
     - file: explorasiData
 - file: dataPreprocessing
   sections:
-    - file: knnkmeans
     - file: abod
