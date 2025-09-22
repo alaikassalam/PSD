@@ -16,55 +16,18 @@ Traceback (most recent call last):
     return future.result()
   File "D:\Laragon\laragon\bin\python\python-3.10\lib\site-packages\nbclient\client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "D:\Laragon\laragon\bin\python\python-3.10\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "D:\Laragon\laragon\bin\python\python-3.10\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
-import pandas as pd
-from pycaret.anomaly import *
-
-# === 1. Pastikan dataset sudah ada ===
-print("Jumlah baris:", data_train.shape[0])
-print("Jumlah kolom:", data_train.shape[1])
-print("Kolom dataset:", list(data_train.columns))
-print(data_train.head())
-
-# === 2. Pilih hanya kolom numerik (biar PyCaret tidak error) ===
-fitur = data_train.select_dtypes(include=['int64', 'float64'])
-print("\nKolom numerik yang dipakai untuk anomaly detection:", list(fitur.columns))
-
-# === 3. Setup PyCaret Anomaly Detection (versi terbaru) ===
-from pycaret.anomaly import setup, create_model, assign_model
-exp_ano = setup(
-    data=fitur,
-    session_id=42
-)
-
-# === 4. Buat model ABOD ===
-abod_model = create_model('abod')
-
-# === 5. Assign label anomaly ===
-dataset_outliers = assign_model(abod_model)
-
-# === 6. Hapus baris outlier (Anomaly == 1 artinya normal, -1 artinya outlier) ===
-dataset_clean = dataset_outliers[dataset_outliers['Anomaly'] == 1]
-
-print("\nJumlah data awal:", len(dataset_outliers))
-print("Jumlah data setelah outlier dihapus:", len(dataset_clean))
-dataset_clean.head()
-
-------------------
-
-
-[1;31m---------------------------------------------------------------------------[0m
-[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [1;32mIn[6], line 2[0m
-[0;32m      1[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mpandas[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mpd[39;00m
-[1;32m----> 2[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mpycaret[39;00m[38;5;21;01m.[39;00m[38;5;21;01manomaly[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m [38;5;241m*[39m
-[0;32m      4[0m [38;5;66;03m# === 1. Pastikan dataset sudah ada ===[39;00m
-[0;32m      5[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mJumlah baris:[39m[38;5;124m"[39m, data_train[38;5;241m.[39mshape[[38;5;241m0[39m])
-
-[1;31mModuleNotFoundError[0m: No module named 'pycaret'
+  File "D:\Laragon\laragon\bin\python\python-3.10\lib\site-packages\nbclient\client.py", line 1005, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+  File "D:\Laragon\laragon\bin\python\python-3.10\lib\site-packages\nbclient\client.py", line 806, in _async_poll_for_reply
+    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
+  File "D:\Laragon\laragon\bin\python\python-3.10\lib\site-packages\nbclient\client.py", line 856, in _async_handle_timeout
+    raise CellTimeoutError.error_from_timeout_and_cell(
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
+The message was: Cell execution timed out.
+Here is a preview of the cell contents:
+-------------------
+['import pandas as pd', 'from pycaret.anomaly import *', '', '# === 1. Pastikan dataset sudah ada ===', 'print("Jumlah baris:", data_train.shape[0])']
+...
+["dataset_clean = dataset_outliers[dataset_outliers['Anomaly'] == 1]", '', 'print("\\nJumlah data awal:", len(dataset_outliers))', 'print("Jumlah data setelah outlier dihapus:", len(dataset_clean))', 'dataset_clean.head()']
+-------------------
 
