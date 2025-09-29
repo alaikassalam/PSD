@@ -11,5 +11,4 @@ chapters:
 - file: dataPreprocessing
   sections:
     - file: abod
-    - file: oversampling
-    - file: ensembleLearning
+    - title: oversampling
