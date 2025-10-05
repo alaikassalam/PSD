@@ -11,4 +11,4 @@ chapters:
 - file: dataPreprocessing
   sections:
     - file: abod
-    - title: oversampling
+    - file: oversampling
