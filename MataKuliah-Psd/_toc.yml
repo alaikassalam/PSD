@@ -8,7 +8,9 @@ chapters:
 - file: dataUnderstanding
   sections:
     - file: explorasiData
+    - file: analisisDataKnime
 - file: dataPreprocessing
   sections:
     - file: abod
     - file: oversampling
+- file: forecasting
