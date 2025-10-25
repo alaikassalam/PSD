@@ -6,7 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search - My sample book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Analisa Data &amp; Klasifikasi Tools Knime &#8212; My sample book</title>
   
   
   
@@ -55,12 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'search';</script>
-  <script src="_static/searchtools.js"></script>
-  <script src="_static/language_data.js"></script>
-  <script src="searchindex.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'analisisDataKnime';</script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data Preprocessing" href="dataPreprocessing.html" />
+    <link rel="prev" title="Explorasi Data" href="explorasiData.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -92,7 +93,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="#"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -122,8 +123,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -180,11 +179,11 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="businessUnderstanding.html">Business Understanding</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="dataUnderstanding.html">Data Understanding</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="dataUnderstanding.html">Data Understanding</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="explorasiData.html">Explorasi Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="analisisDataKnime.html">Analisa Data &amp; Klasifikasi Tools Knime</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Analisa Data &amp; Klasifikasi Tools Knime</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="dataPreprocessing.html">Data Preprocessing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -266,7 +265,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsearch.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FanalisisDataKnime.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -278,6 +277,54 @@
   </span>
 <span class="btn__text-container">Open issue</span>
 </a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/analisisDataKnime.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
 </li>
       
   </ul>
@@ -319,7 +366,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -328,42 +377,127 @@ document.write(`
 </div>
               
               
-  <div class="bd-search-container">
-    <h1>Search</h1>
-    <noscript>
-      <div class="admonition error">
-        <p class="admonition-title">Error</p>
-        <p>Please activate JavaScript to enable the search functionality.</p>
-      </div>
-    </noscript>
-    
-<form class="bd-search d-flex align-items-center"
-      action="#"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    <div id="search-results"></div>
-  </div>
-  <script>
-    // Activate the search field on page load
-    let searchInput = document.querySelector("form.bd-search input");
-    if (searchInput) {
-        searchInput.focus();
-        searchInput.select();
-        console.log("[PST]: Set focus on search field.");
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Analisa Data & Klasifikasi Tools Knime</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persiapan-yang-harus-dilakukan">Persiapan yang Harus Dilakukan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-tools-yang-dibutuhkan">Install tools yang dibutuhkan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#settingan-knime">Settingan Knime</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-buka-knime">Langkah 1 - Buka KNIME</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cek-instalasi-java">Langkah 2 - Cek instalasi Java</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-tambahkan-driver-postgresql">Langkah 3 - Tambahkan Driver PostgreSQL</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-konfigurasi-python-environment-di-knime">Langkah 4 - Konfigurasi Python Environment di KNIME</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-tes-node-python">Langkah 5 - Tes Node Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="analisa-data-klasifikasi-tools-knime">
+<h1>Analisa Data &amp; Klasifikasi Tools Knime<a class="headerlink" href="#analisa-data-klasifikasi-tools-knime" title="Link to this heading">#</a></h1>
+<section id="persiapan-yang-harus-dilakukan">
+<h2>Persiapan yang Harus Dilakukan<a class="headerlink" href="#persiapan-yang-harus-dilakukan" title="Link to this heading">#</a></h2>
+<section id="install-tools-yang-dibutuhkan">
+<h3>Install tools yang dibutuhkan<a class="headerlink" href="#install-tools-yang-dibutuhkan" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Install KNIME Analytics Platform</p></li>
+<li><p>Download dan pasang driver PostgreSQL (JDBC)</p></li>
+<li><p>Pastikan sudah terinstall JDK (Java Development Kit)</p></li>
+<li><p>Pastikan Python sudah terinstall (Conda/Miniforge) minimal</p></li>
+</ul>
+</section>
+<section id="settingan-knime">
+<h3>Settingan Knime<a class="headerlink" href="#settingan-knime" title="Link to this heading">#</a></h3>
+<section id="langkah-1-buka-knime">
+<h4>Langkah 1 - Buka KNIME<a class="headerlink" href="#langkah-1-buka-knime" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Jalankan aplikasi KNIME</p></li>
+<li><p>Saat pertama kali terbuka, KNIME akan minta kamu memilih workspace folder → ini adalah tempat semua proyek disimpan
+<img alt="tampilanKnime" src="_images/Tampilan-Kname.png" /></p></li>
+<li><p>Saat pertama kali terbuka, KNIME akan minta kamu memilih workspace folder → ini adalah tempat semua proyek disimpan</p></li>
+</ul>
+</section>
+<section id="langkah-2-cek-instalasi-java">
+<h4>Langkah 2 - Cek instalasi Java<a class="headerlink" href="#langkah-2-cek-instalasi-java" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Buka menu: File → Preferences → KNIME → Java</p></li>
+<li><p>Pastikan terdeteksi versi JDK 11 atau 17
+<img alt="tampilanMiniforge1" src="_images/cmd2.png" />
+<img alt="tampilanMiniforge2" src="_images/cmd3.png" /></p></li>
+</ul>
+</section>
+<section id="langkah-3-tambahkan-driver-postgresql">
+<h4>Langkah 3 - Tambahkan Driver PostgreSQL<a class="headerlink" href="#langkah-3-tambahkan-driver-postgresql" title="Link to this heading">#</a></h4>
+<p>Agar KNIME bisa terhubung ke database PostgreSQL</p>
+<ul class="simple">
+<li><p>Unduh driver JDBC (file bernama seperti postgresql-42.7.1.jar).</p></li>
+<li><p>Di KNIME, buka: File → Preferences → KNIME → Databases → Drivers</p></li>
+<li><p>Klik Add File… lalu pilih file postgresql-42.7.1.jar tadi. Klik Apply and Close.
+<img alt="driverPostgreSQL" src="_images/driverPostgreSQL.png" /></p></li>
+</ul>
+</section>
+<section id="langkah-4-konfigurasi-python-environment-di-knime">
+<h4>Langkah 4 - Konfigurasi Python Environment di KNIME<a class="headerlink" href="#langkah-4-konfigurasi-python-environment-di-knime" title="Link to this heading">#</a></h4>
+<p>Agar node “Python Script” bisa dijalankan.</p>
+<ul class="simple">
+<li><p>Buka: File → Preferences → KNIME → Python</p></li>
+<li><p>Pilih Manual Configuration, Di bagian Python 3, arahkan ke environment conda kamu:</p></li>
+<li><p>Klik Apply and Close, Restart KNIME (disarankan).
+<img alt="Environment" src="_images/Environment.png" /></p></li>
+</ul>
+</section>
+<section id="langkah-5-tes-node-python">
+<h4>Langkah 5 - Tes Node Python<a class="headerlink" href="#langkah-5-tes-node-python" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Di KNIME, cari node yang dibutuhkan, Tarik ke canvas dan buka node.
+<img alt="tesKoneksi" src="_images/tesKoneksi.png" /></p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
     }
-  </script>
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
 
               
               
@@ -372,12 +506,56 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="explorasiData.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Explorasi Data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dataPreprocessing.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Preprocessing</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persiapan-yang-harus-dilakukan">Persiapan yang Harus Dilakukan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-tools-yang-dibutuhkan">Install tools yang dibutuhkan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#settingan-knime">Settingan Knime</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-buka-knime">Langkah 1 - Buka KNIME</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-cek-instalasi-java">Langkah 2 - Cek instalasi Java</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-tambahkan-driver-postgresql">Langkah 3 - Tambahkan Driver PostgreSQL</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-konfigurasi-python-environment-di-knime">Langkah 4 - Konfigurasi Python Environment di KNIME</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-tes-node-python">Langkah 5 - Tes Node Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
