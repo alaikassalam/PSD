@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'forecasting';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Forecasting" href="forecasting2.html" />
     <link rel="prev" title="Oversampling" href="oversampling.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -192,7 +193,10 @@
 
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Forecasting</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Forecasting</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="forecasting2.html">Forecasting</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -389,7 +393,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataunderstanding">DataUnderstanding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crawling-data">Crawling Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-server">Koneksi ke Server</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penentuan-area-dan-rentang-waktu">Penentuan Area dan Rentang Waktu</a></li>
@@ -400,16 +403,26 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datapreprocessing">DataPreProcessing</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengurutan-data-berdasarkan-waktu">Pengurutan Data Berdasarkan Waktu</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolasi-untuk-mengisi-data-hilang">Interpolasi untuk Mengisi Data Hilang</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolasi-untuk-mengisi-data-hilang">Interpolasi untuk Mengisi Data Hilang</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-nilai-outlier-pada-data-no2">Analisis Nilai Outlier pada Data NO2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ubah-data-time-series-ke-data-supervised">Ubah data time series ke data supervised</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data-z-score">Normalisasi Data (Z-Score)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-k-nn">Model K-NN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explorasi-data">Explorasi Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persiapan-data-untuk-modelling">Persiapan Data untuk Modelling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagi-data-training-dan-testing">Bagi data Training dan Testing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pelatihan-model-k-nn">Pelatihan Model K-NN</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pelaksanaan-prediksi">Pelaksanaan Prediksi</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-model">Evaluasi Model</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-dan-analisis-residual">Visualisasi dan Analisis Residual</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-pencarian-k-optimal">Eksperimen (Pencarian K Optimal)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-pencarian-k-optimal">Eksperimen (Pencarian K Optimal)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#training-dan-evaluasi-model-dengan-k-optimal">Training dan Evaluasi Model dengan K Optimal</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-akhir-visualisasi-optimal">Perbandingan Akhir &amp; Visualisasi Optimal</a></li>
 </ul>
 </li>
@@ -428,9 +441,6 @@ document.write(`
 <h1>Forecasting<a class="headerlink" href="#forecasting" title="Link to this heading">#</a></h1>
 <section id="dataunderstanding">
 <h2>DataUnderstanding<a class="headerlink" href="#dataunderstanding" title="Link to this heading">#</a></h2>
-<section id="crawling-data">
-<h3>Crawling Data<a class="headerlink" href="#crawling-data" title="Link to this heading">#</a></h3>
-</section>
 <section id="import-library">
 <h3>Import Library<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h3>
 <p>Kode ini berfungsi untuk mengimpor semua library Python yang diperlukan untuk analisis.</p>
@@ -748,6 +758,38 @@ Sisa missing values di kolom &#39;NO2&#39;: 1
 </div>
 </div>
 </div>
+<section id="analisis-nilai-outlier-pada-data-no2">
+<h4>Analisis Nilai Outlier pada Data NO2<a class="headerlink" href="#analisis-nilai-outlier-pada-data-no2" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">no2_values</span> <span class="o">=</span> <span class="n">df_interpolated</span><span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">]</span>
+<span class="n">q1</span> <span class="o">=</span> <span class="n">no2_values</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">q3</span> <span class="o">=</span> <span class="n">no2_values</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">iqr</span> <span class="o">=</span> <span class="n">q3</span> <span class="o">-</span> <span class="n">q1</span>
+<span class="n">lower_bound</span> <span class="o">=</span> <span class="n">q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">iqr</span>
+<span class="n">upper_bound</span> <span class="o">=</span> <span class="n">q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">iqr</span>
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">df_interpolated</span><span class="p">[(</span><span class="n">no2_values</span> <span class="o">&lt;</span> <span class="n">lower_bound</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">no2_values</span> <span class="o">&gt;</span> <span class="n">upper_bound</span><span class="p">)]</span>
+
+<span class="c1"># --- Konfirmasi Hasil ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Selesai! Ditemukan </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span><span class="si">}</span><span class="s2"> nilai outlier pada data NO2.&quot;</span><span class="p">)</span>
+<span class="c1"># Imputasi Nilai Outlier dengan Metode Median</span>
+<span class="n">df_no_outliers</span> <span class="o">=</span> <span class="n">df_interpolated</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">median_no2</span> <span class="o">=</span> <span class="n">df_no_outliers</span><span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">df_no_outliers</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_no_outliers</span><span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lower_bound</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_no_outliers</span><span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">upper_bound</span><span class="p">),</span> <span class="s1">&#39;NO2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">median_no2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Selesai! Nilai outlier telah diimputasi dengan median NO2.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Selesai! Ditemukan 69 nilai outlier pada data NO2.
+Selesai! Nilai outlier telah diimputasi dengan median NO2.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ubah-data-time-series-ke-data-supervised">
+<h4>Ubah data time series ke data supervised<a class="headerlink" href="#ubah-data-time-series-ke-data-supervised" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mulai dengan DataFrame &#39;df_interpolated&#39; dari langkah sebelumnya</span>
@@ -795,6 +837,7 @@ Cuplikan 5 baris pertama dari data supervised:
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="normalisasi-data-z-score">
 <h3>Normalisasi Data (Z-Score)<a class="headerlink" href="#normalisasi-data-z-score" title="Link to this heading">#</a></h3>
@@ -852,6 +895,8 @@ Cuplikan 5 baris pertama dari data supervised:
 </div>
 </div>
 </div>
+<section id="explorasi-data">
+<h3>Explorasi Data<a class="headerlink" href="#explorasi-data" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menggunakan DataFrame &#39;df_scaled_z&#39; yang sudah dinormalisasi (Z-Score)</span>
@@ -917,6 +962,9 @@ dtype: int64
 </div>
 </div>
 </div>
+</section>
+<section id="persiapan-data-untuk-modelling">
+<h3>Persiapan Data untuk Modelling<a class="headerlink" href="#persiapan-data-untuk-modelling" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Kita menggunakan DataFrame &#39;df_scaled_z&#39; (hasil Z-Score)</span>
@@ -969,6 +1017,9 @@ Name: NO2_target(t), dtype: float64
 </div>
 </div>
 </div>
+</section>
+<section id="bagi-data-training-dan-testing">
+<h3>Bagi data Training dan Testing<a class="headerlink" href="#bagi-data-training-dan-testing" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menggunakan X dan y dari langkah sebelumnya</span>
@@ -1023,6 +1074,7 @@ Jumlah data Uji (Test): 361 baris (20%)
 </div>
 </div>
 </div>
+</section>
 <section id="pelatihan-model-k-nn">
 <h3>Pelatihan Model K-NN<a class="headerlink" href="#pelatihan-model-k-nn" title="Link to this heading">#</a></h3>
 <p>Cell ini menginisialisasi model K-NN Regressor dan melatihnya menggunakan data latih (X_train dan y_train). Proses .fit() adalah saat model mempelajari pola dari data.</p>
@@ -1161,18 +1213,6 @@ RMSE: 2.100249410687338e-05
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residuals (Actual - Predicted)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-
-<span class="c1"># D. Buat Histogram Residual</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">residuals</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
-<span class="c1"># Tambahkan garis Mean di histogram</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">mean_resid</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Mean = </span><span class="si">{</span><span class="n">mean_resid</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histogram dari Residuals&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Nilai Residual&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frekuensi&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1186,7 +1226,6 @@ Catatan: Mean residual yang mendekati 0 adalah pertanda baik.
 </pre></div>
 </div>
 <img alt="_images/b523b133ee423f9fe11891f5300ee5832ffe03c3a32b28917dccd0d64d0e3ed8.png" src="_images/b523b133ee423f9fe11891f5300ee5832ffe03c3a32b28917dccd0d64d0e3ed8.png" />
-<img alt="_images/632b08237eebd1ff7edb9b6c16939f60510e5de50626f2f2610832bbc0340959.png" src="_images/632b08237eebd1ff7edb9b6c16939f60510e5de50626f2f2610832bbc0340959.png" />
 </div>
 </div>
 </section>
@@ -1287,6 +1326,103 @@ Dengan nilai RMSE terendah: 1.642907962646055e-05
 <img alt="_images/c94d57610d44c2bb3dfa3b4b750c2223f2f62e6027eea2ea46731fb8c2e9eb19.png" src="_images/c94d57610d44c2bb3dfa3b4b750c2223f2f62e6027eea2ea46731fb8c2e9eb19.png" />
 </div>
 </div>
+<section id="training-dan-evaluasi-model-dengan-k-optimal">
+<h4>Training dan Evaluasi Model dengan K Optimal<a class="headerlink" href="#training-dan-evaluasi-model-dengan-k-optimal" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Memulai pencarian K optimal...&quot;</span><span class="p">)</span>
+<span class="n">rmse_values</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Untuk menyimpan nilai RMSE</span>
+<span class="n">range_k</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span> <span class="c1"># Kita akan tes K dari 1 sampai 30</span>
+
+<span class="c1"># Mengembalikan y_test ke skala asli (hanya perlu sekali)</span>
+<span class="n">y_test_orig</span> <span class="o">=</span> <span class="n">target_scaler_z</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">range_k</span><span class="p">:</span>
+    <span class="c1"># 1. Training model dengan K saat ini</span>
+    <span class="n">knn_model</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">knn_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    
+    <span class="c1"># 2. Prediksi data test</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    
+    <span class="c1"># 3. Kembalikan prediksi ke skala asli</span>
+    <span class="n">y_pred_orig</span> <span class="o">=</span> <span class="n">target_scaler_z</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">y_pred</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    
+    <span class="c1"># 4. Hitung RMSE</span>
+    <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test_orig</span><span class="p">,</span> <span class="n">y_pred_orig</span><span class="p">))</span>
+    
+    <span class="c1"># 5. Simpan RMSE</span>
+    <span class="n">rmse_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;k = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">, RMSE = </span><span class="si">{</span><span class="n">rmse</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pencarian K selesai.&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 7. Cari K Terbaik ---</span>
+<span class="n">best_rmse</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">rmse_values</span><span class="p">)</span>
+<span class="c1"># +1 karena index list mulai dari 0, tapi K kita mulai dari 1</span>
+<span class="n">best_k</span> <span class="o">=</span> <span class="n">rmse_values</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">best_rmse</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- HASIL K-OPTIMAL ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nilai K terbaik adalah: </span><span class="si">{</span><span class="n">best_k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dengan nilai RMSE terendah: </span><span class="si">{</span><span class="n">best_rmse</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 8. Visualisasi Elbow Method ---</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">range_k</span><span class="p">,</span> <span class="n">rmse_values</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;RMSE per K&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;RMSE vs. K Value (Elbow Method)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;K Value (n_neighbors)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Root Mean Squared Error (RMSE)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Tandai K terbaik</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">best_k</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Optimal K = </span><span class="si">{</span><span class="n">best_k</span><span class="si">}</span><span class="s1"> (RMSE: </span><span class="si">{</span><span class="n">best_rmse</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Memulai pencarian K optimal...
+k = 1, RMSE = 3.425704172415043e-05
+k = 2, RMSE = 2.4867862639090725e-05
+k = 3, RMSE = 2.2700460490169352e-05
+k = 4, RMSE = 2.1608396987650907e-05
+k = 5, RMSE = 2.100249410687338e-05
+k = 6, RMSE = 1.9851778344371008e-05
+k = 7, RMSE = 1.909764531409078e-05
+k = 8, RMSE = 1.839893004046895e-05
+k = 9, RMSE = 1.8075525958698976e-05
+k = 10, RMSE = 1.8346293442185695e-05
+k = 11, RMSE = 1.7887905803184348e-05
+k = 12, RMSE = 1.7704967119048564e-05
+k = 13, RMSE = 1.7546974200482384e-05
+k = 14, RMSE = 1.743032827636376e-05
+k = 15, RMSE = 1.7233120620685612e-05
+k = 16, RMSE = 1.715573715007244e-05
+k = 17, RMSE = 1.7051108817438472e-05
+k = 18, RMSE = 1.6884535917763142e-05
+k = 19, RMSE = 1.682945788547279e-05
+k = 20, RMSE = 1.6791802603308425e-05
+k = 21, RMSE = 1.6744029277256e-05
+k = 22, RMSE = 1.6727503585335725e-05
+k = 23, RMSE = 1.6691075472993462e-05
+k = 24, RMSE = 1.6631752873141245e-05
+k = 25, RMSE = 1.6654625897634607e-05
+k = 26, RMSE = 1.657179077937506e-05
+k = 27, RMSE = 1.6531941245490262e-05
+k = 28, RMSE = 1.657957287346524e-05
+k = 29, RMSE = 1.6499457214775476e-05
+k = 30, RMSE = 1.642907962646055e-05
+Pencarian K selesai.
+
+--- HASIL K-OPTIMAL ---
+Nilai K terbaik adalah: 30
+Dengan nilai RMSE terendah: 1.642907962646055e-05
+</pre></div>
+</div>
+<img alt="_images/c94d57610d44c2bb3dfa3b4b750c2223f2f62e6027eea2ea46731fb8c2e9eb19.png" src="_images/c94d57610d44c2bb3dfa3b4b750c2223f2f62e6027eea2ea46731fb8c2e9eb19.png" />
+</div>
+</div>
+</section>
 </section>
 <section id="perbandingan-akhir-visualisasi-optimal">
 <h3>Perbandingan Akhir &amp; Visualisasi Optimal<a class="headerlink" href="#perbandingan-akhir-visualisasi-optimal" title="Link to this heading">#</a></h3>
@@ -1379,6 +1515,8 @@ Peningkatan RMSE: 0.0
 </div>
 </section>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1420,6 +1558,15 @@ Peningkatan RMSE: 0.0
         <p class="prev-next-title">Oversampling</p>
       </div>
     </a>
+    <a class="right-next"
+       href="forecasting2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Forecasting</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1437,7 +1584,6 @@ Peningkatan RMSE: 0.0
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataunderstanding">DataUnderstanding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crawling-data">Crawling Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-server">Koneksi ke Server</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penentuan-area-dan-rentang-waktu">Penentuan Area dan Rentang Waktu</a></li>
@@ -1448,16 +1594,26 @@ Peningkatan RMSE: 0.0
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datapreprocessing">DataPreProcessing</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengurutan-data-berdasarkan-waktu">Pengurutan Data Berdasarkan Waktu</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolasi-untuk-mengisi-data-hilang">Interpolasi untuk Mengisi Data Hilang</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolasi-untuk-mengisi-data-hilang">Interpolasi untuk Mengisi Data Hilang</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-nilai-outlier-pada-data-no2">Analisis Nilai Outlier pada Data NO2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ubah-data-time-series-ke-data-supervised">Ubah data time series ke data supervised</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data-z-score">Normalisasi Data (Z-Score)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-k-nn">Model K-NN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explorasi-data">Explorasi Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persiapan-data-untuk-modelling">Persiapan Data untuk Modelling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagi-data-training-dan-testing">Bagi data Training dan Testing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pelatihan-model-k-nn">Pelatihan Model K-NN</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pelaksanaan-prediksi">Pelaksanaan Prediksi</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-model">Evaluasi Model</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-dan-analisis-residual">Visualisasi dan Analisis Residual</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-pencarian-k-optimal">Eksperimen (Pencarian K Optimal)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-pencarian-k-optimal">Eksperimen (Pencarian K Optimal)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#training-dan-evaluasi-model-dengan-k-optimal">Training dan Evaluasi Model dengan K Optimal</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-akhir-visualisasi-optimal">Perbandingan Akhir &amp; Visualisasi Optimal</a></li>
 </ul>
 </li>

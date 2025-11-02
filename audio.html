@@ -1,0 +1,1098 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'audio';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Forecasting" href="forecasting2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Proyek Sain Data
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="businessUnderstanding.html">Business Understanding</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dataUnderstanding.html">Data Understanding</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="explorasiData.html">Explorasi Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analisisDataKnime.html">Analisa Data &amp; Klasifikasi Tools Knime</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="dataPreprocessing.html">Data Preprocessing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="abod.html">Deteksi Outlier ABOD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oversampling.html">Oversampling</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="forecasting.html">Forecasting</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="forecasting2.html">Forecasting</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Faudio.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/audio.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>jupyterlab<span class="w"> </span>streamlit<span class="w"> </span>librosa<span class="w"> </span>scikit-learn<span class="w"> </span>sounddevice<span class="w"> </span>numpy<span class="w"> </span>scipy
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jupyterlab in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (4.4.6)
+Requirement already satisfied: streamlit in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (1.51.0)
+Requirement already satisfied: librosa in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (0.11.0)
+Requirement already satisfied: scikit-learn in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (1.7.2)
+Requirement already satisfied: sounddevice in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (0.5.3)
+Requirement already satisfied: numpy in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (2.2.6)
+Requirement already satisfied: scipy in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (1.15.3)
+Requirement already satisfied: async-lru&gt;=1.0.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab) (2.0.5)
+Requirement already satisfied: httpx&lt;1,&gt;=0.25.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab) (0.28.1)
+Requirement already satisfied: ipykernel!=6.30.0,&gt;=6.5.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab) (6.30.1)
+Requirement already satisfied: jinja2&gt;=3.0.3 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab) (3.1.6)
+Requirement already satisfied: jupyter-core in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab) (5.8.1)
+Requirement already satisfied: jupyter-lsp&gt;=2.0.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab) (2.2.6)
+Requirement already satisfied: jupyter-server&lt;3,&gt;=2.4.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab) (2.17.0)
+Requirement already satisfied: jupyterlab-server&lt;3,&gt;=2.27.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab) (2.27.3)
+Requirement already satisfied: notebook-shim&gt;=0.2 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab) (0.2.4)
+Requirement already satisfied: packaging in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab) (25.0)
+Requirement already satisfied: setuptools&gt;=41.1.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab) (63.2.0)
+Requirement already satisfied: tomli&gt;=1.2.2 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab) (2.2.1)
+Requirement already satisfied: tornado&gt;=6.2.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab) (6.5.2)
+Requirement already satisfied: traitlets in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab) (5.14.3)
+Requirement already satisfied: anyio in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from httpx&lt;1,&gt;=0.25.0-&gt;jupyterlab) (4.10.0)
+Requirement already satisfied: certifi in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from httpx&lt;1,&gt;=0.25.0-&gt;jupyterlab) (2025.10.5)
+Requirement already satisfied: httpcore==1.* in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from httpx&lt;1,&gt;=0.25.0-&gt;jupyterlab) (1.0.9)
+Requirement already satisfied: idna in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from httpx&lt;1,&gt;=0.25.0-&gt;jupyterlab) (3.11)
+Requirement already satisfied: h11&gt;=0.16 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from httpcore==1.*-&gt;httpx&lt;1,&gt;=0.25.0-&gt;jupyterlab) (0.16.0)
+Requirement already satisfied: argon2-cffi&gt;=21.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (25.1.0)
+Requirement already satisfied: jupyter-client&gt;=7.4.4 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (8.6.3)
+Requirement already satisfied: jupyter-events&gt;=0.11.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.12.0)
+Requirement already satisfied: jupyter-server-terminals&gt;=0.4.4 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.5.3)
+Requirement already satisfied: nbconvert&gt;=6.4.4 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (7.16.6)
+Requirement already satisfied: nbformat&gt;=5.3.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (5.10.4)
+Requirement already satisfied: overrides&gt;=5.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (7.7.0)
+Requirement already satisfied: prometheus-client&gt;=0.9 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.22.1)
+Requirement already satisfied: pywinpty&gt;=2.0.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (3.0.0)
+Requirement already satisfied: pyzmq&gt;=24 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (27.0.2)
+Requirement already satisfied: send2trash&gt;=1.8.2 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.8.3)
+Requirement already satisfied: terminado&gt;=0.8.3 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.18.1)
+Requirement already satisfied: websocket-client&gt;=1.7 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.8.0)
+Requirement already satisfied: babel&gt;=2.10 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (2.17.0)
+Requirement already satisfied: json5&gt;=0.9.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (0.12.1)
+Requirement already satisfied: jsonschema&gt;=4.18.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (4.25.1)
+Requirement already satisfied: requests&gt;=2.31 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (2.32.5)
+Requirement already satisfied: altair!=5.4.0,!=5.4.1,&lt;6,&gt;=4.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from streamlit) (5.5.0)
+Requirement already satisfied: blinker&lt;2,&gt;=1.5.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from streamlit) (1.9.0)
+Requirement already satisfied: cachetools&lt;7,&gt;=4.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from streamlit) (6.2.1)
+Requirement already satisfied: click&lt;9,&gt;=7.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from streamlit) (8.2.1)
+Requirement already satisfied: pandas&lt;3,&gt;=1.4.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from streamlit) (2.3.3)
+Requirement already satisfied: pillow&lt;13,&gt;=7.1.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from streamlit) (11.3.0)
+Requirement already satisfied: protobuf&lt;7,&gt;=3.20 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from streamlit) (6.33.0)
+Requirement already satisfied: pyarrow&lt;22,&gt;=7.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from streamlit) (21.0.0)
+Requirement already satisfied: tenacity&lt;10,&gt;=8.1.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from streamlit) (9.1.2)
+Requirement already satisfied: toml&lt;2,&gt;=0.10.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from streamlit) (0.10.2)
+Requirement already satisfied: typing-extensions&lt;5,&gt;=4.4.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from streamlit) (4.15.0)
+Requirement already satisfied: watchdog&lt;7,&gt;=2.1.5 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from streamlit) (6.0.0)
+Requirement already satisfied: gitpython!=3.1.19,&lt;4,&gt;=3.0.7 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from streamlit) (3.1.45)
+Requirement already satisfied: pydeck&lt;1,&gt;=0.8.0b4 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from streamlit) (0.9.1)
+Requirement already satisfied: narwhals&gt;=1.14.2 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from altair!=5.4.0,!=5.4.1,&lt;6,&gt;=4.0-&gt;streamlit) (2.5.0)
+Requirement already satisfied: colorama in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from click&lt;9,&gt;=7.0-&gt;streamlit) (0.4.6)
+Requirement already satisfied: gitdb&lt;5,&gt;=4.0.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from gitpython!=3.1.19,&lt;4,&gt;=3.0.7-&gt;streamlit) (4.0.12)
+Requirement already satisfied: smmap&lt;6,&gt;=3.0.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from gitdb&lt;5,&gt;=4.0.1-&gt;gitpython!=3.1.19,&lt;4,&gt;=3.0.7-&gt;streamlit) (5.0.2)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from pandas&lt;3,&gt;=1.4.0-&gt;streamlit) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from pandas&lt;3,&gt;=1.4.0-&gt;streamlit) (2025.2)
+Requirement already satisfied: tzdata&gt;=2022.7 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from pandas&lt;3,&gt;=1.4.0-&gt;streamlit) (2025.2)
+Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from requests&gt;=2.31-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (3.4.4)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from requests&gt;=2.31-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (2.5.0)
+Requirement already satisfied: audioread&gt;=2.1.9 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from librosa) (3.1.0)
+Requirement already satisfied: numba&gt;=0.51.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from librosa) (0.62.1)
+Requirement already satisfied: joblib&gt;=1.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from librosa) (1.5.2)
+Requirement already satisfied: decorator&gt;=4.3.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from librosa) (5.2.1)
+Requirement already satisfied: soundfile&gt;=0.12.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from librosa) (0.13.1)
+Requirement already satisfied: pooch&gt;=1.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from librosa) (1.8.2)
+Requirement already satisfied: soxr&gt;=0.3.2 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from librosa) (1.0.0)
+Requirement already satisfied: lazy_loader&gt;=0.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from librosa) (0.4)
+Requirement already satisfied: msgpack&gt;=1.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from librosa) (1.1.2)
+Requirement already satisfied: threadpoolctl&gt;=3.1.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from scikit-learn) (3.6.0)
+Requirement already satisfied: CFFI&gt;=1.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from sounddevice) (2.0.0)
+Requirement already satisfied: exceptiongroup&gt;=1.0.2 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from anyio-&gt;httpx&lt;1,&gt;=0.25.0-&gt;jupyterlab) (1.3.0)
+Requirement already satisfied: sniffio&gt;=1.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from anyio-&gt;httpx&lt;1,&gt;=0.25.0-&gt;jupyterlab) (1.3.1)
+Requirement already satisfied: argon2-cffi-bindings in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from argon2-cffi&gt;=21.1-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (25.1.0)
+Requirement already satisfied: pycparser in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from CFFI&gt;=1.0-&gt;sounddevice) (2.23)
+Requirement already satisfied: comm&gt;=0.1.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from ipykernel!=6.30.0,&gt;=6.5.0-&gt;jupyterlab) (0.2.3)
+Requirement already satisfied: debugpy&gt;=1.6.5 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from ipykernel!=6.30.0,&gt;=6.5.0-&gt;jupyterlab) (1.8.16)
+Requirement already satisfied: ipython&gt;=7.23.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from ipykernel!=6.30.0,&gt;=6.5.0-&gt;jupyterlab) (8.37.0)
+Requirement already satisfied: matplotlib-inline&gt;=0.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from ipykernel!=6.30.0,&gt;=6.5.0-&gt;jupyterlab) (0.1.7)
+Requirement already satisfied: nest-asyncio&gt;=1.4 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from ipykernel!=6.30.0,&gt;=6.5.0-&gt;jupyterlab) (1.6.0)
+Requirement already satisfied: psutil&gt;=5.7 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from ipykernel!=6.30.0,&gt;=6.5.0-&gt;jupyterlab) (7.0.0)
+Requirement already satisfied: jedi&gt;=0.16 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from ipython&gt;=7.23.1-&gt;ipykernel!=6.30.0,&gt;=6.5.0-&gt;jupyterlab) (0.19.2)
+Requirement already satisfied: prompt_toolkit&lt;3.1.0,&gt;=3.0.41 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from ipython&gt;=7.23.1-&gt;ipykernel!=6.30.0,&gt;=6.5.0-&gt;jupyterlab) (3.0.51)
+Requirement already satisfied: pygments&gt;=2.4.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from ipython&gt;=7.23.1-&gt;ipykernel!=6.30.0,&gt;=6.5.0-&gt;jupyterlab) (2.19.2)
+Requirement already satisfied: stack_data in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from ipython&gt;=7.23.1-&gt;ipykernel!=6.30.0,&gt;=6.5.0-&gt;jupyterlab) (0.6.3)
+Requirement already satisfied: wcwidth in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from prompt_toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=7.23.1-&gt;ipykernel!=6.30.0,&gt;=6.5.0-&gt;jupyterlab) (0.2.13)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.4 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=7.23.1-&gt;ipykernel!=6.30.0,&gt;=6.5.0-&gt;jupyterlab) (0.8.5)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jinja2&gt;=3.0.3-&gt;jupyterlab) (3.0.2)
+Requirement already satisfied: attrs&gt;=22.2.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (25.3.0)
+Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (2025.4.1)
+Requirement already satisfied: referencing&gt;=0.28.4 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (0.36.2)
+Requirement already satisfied: rpds-py&gt;=0.7.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jsonschema&gt;=4.18.0-&gt;jupyterlab-server&lt;3,&gt;=2.27.1-&gt;jupyterlab) (0.27.0)
+Requirement already satisfied: platformdirs&gt;=2.5 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-core-&gt;jupyterlab) (4.5.0)
+Requirement already satisfied: pywin32&gt;=300 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-core-&gt;jupyterlab) (311)
+Requirement already satisfied: python-json-logger&gt;=2.0.4 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (3.3.0)
+Requirement already satisfied: pyyaml&gt;=5.3 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (6.0.2)
+Requirement already satisfied: rfc3339-validator in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.1.4)
+Requirement already satisfied: rfc3986-validator&gt;=0.1.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.1.1)
+Requirement already satisfied: fqdn in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.5.1)
+Requirement already satisfied: isoduration in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (20.11.0)
+Requirement already satisfied: jsonpointer&gt;1.13 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (3.0.0)
+Requirement already satisfied: rfc3987-syntax&gt;=1.1.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.1.0)
+Requirement already satisfied: uri-template in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.3.0)
+Requirement already satisfied: webcolors&gt;=24.6.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (24.11.1)
+Requirement already satisfied: beautifulsoup4 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (4.13.5)
+Requirement already satisfied: bleach!=5.0.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from bleach[css]!=5.0.0-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (6.2.0)
+Requirement already satisfied: defusedxml in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.7.1)
+Requirement already satisfied: jupyterlab-pygments in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.3.0)
+Requirement already satisfied: mistune&lt;4,&gt;=2.0.3 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (3.1.3)
+Requirement already satisfied: nbclient&gt;=0.5.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.10.2)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.5.1)
+Requirement already satisfied: webencodings in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from bleach!=5.0.0-&gt;bleach[css]!=5.0.0-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (0.5.1)
+Requirement already satisfied: tinycss2&lt;1.5,&gt;=1.1.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from bleach[css]!=5.0.0-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.4.0)
+Requirement already satisfied: fastjsonschema&gt;=2.15 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from nbformat&gt;=5.3.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (2.21.2)
+Requirement already satisfied: llvmlite&lt;0.46,&gt;=0.45.0dev0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from numba&gt;=0.51.0-&gt;librosa) (0.45.1)
+Requirement already satisfied: six&gt;=1.5 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&lt;3,&gt;=1.4.0-&gt;streamlit) (1.17.0)
+Requirement already satisfied: lark&gt;=1.2.2 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from rfc3987-syntax&gt;=1.1.0-&gt;jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.2.2)
+Requirement already satisfied: soupsieve&gt;1.2 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from beautifulsoup4-&gt;nbconvert&gt;=6.4.4-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (2.7)
+Requirement already satisfied: arrow&gt;=0.15.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from isoduration-&gt;jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (1.3.0)
+Requirement already satisfied: types-python-dateutil&gt;=2.8.10 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from arrow&gt;=0.15.0-&gt;isoduration-&gt;jsonschema[format-nongpl]&gt;=4.18.0-&gt;jupyter-events&gt;=0.11.0-&gt;jupyter-server&lt;3,&gt;=2.4.0-&gt;jupyterlab) (2.9.0.20250822)
+Requirement already satisfied: executing&gt;=1.2.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from stack_data-&gt;ipython&gt;=7.23.1-&gt;ipykernel!=6.30.0,&gt;=6.5.0-&gt;jupyterlab) (2.2.0)
+Requirement already satisfied: asttokens&gt;=2.1.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from stack_data-&gt;ipython&gt;=7.23.1-&gt;ipykernel!=6.30.0,&gt;=6.5.0-&gt;jupyterlab) (3.0.0)
+Requirement already satisfied: pure-eval in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from stack_data-&gt;ipython&gt;=7.23.1-&gt;ipykernel!=6.30.0,&gt;=6.5.0-&gt;jupyterlab) (0.2.3)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip is available: 25.2 -&gt; 25.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sounddevice<span class="w"> </span>numpy<span class="w"> </span>scipy
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sounddevice in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (0.5.3)
+Requirement already satisfied: numpy in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (2.2.6)
+Requirement already satisfied: scipy in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (1.15.3)
+Requirement already satisfied: CFFI&gt;=1.0 in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from sounddevice) (2.0.0)
+Requirement already satisfied: pycparser in d:\laragon\laragon\bin\python\python-3.10\lib\site-packages (from CFFI&gt;=1.0-&gt;sounddevice) (2.23)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip is available: 25.2 -&gt; 25.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sounddevice</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.io.wavfile</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">wav</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Konfigurasi ---</span>
+<span class="n">JUMLAH_SAMPEL</span> <span class="o">=</span> <span class="mi">100</span>      <span class="c1"># 100x rekaman per kata</span>
+<span class="n">DURASI_REKAMAN</span> <span class="o">=</span> <span class="mf">1.5</span>    <span class="c1"># Durasi rekaman dalam detik (sesuaikan jika perlu)</span>
+<span class="n">SAMPLE_RATE</span> <span class="o">=</span> <span class="mi">22050</span>     <span class="c1"># Standar untuk speech recognition</span>
+<span class="n">KATA_TARGET</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;buka&quot;</span><span class="p">,</span> <span class="s2">&quot;tutup&quot;</span><span class="p">]</span>
+<span class="n">FOLDER_DATA</span> <span class="o">=</span> <span class="s2">&quot;./dataset/data-hasil&quot;</span>
+<span class="c1"># --------------------</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">rekam_audio</span><span class="p">(</span><span class="n">durasi</span><span class="p">,</span> <span class="n">sr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Merekam audio dari mikrofon default.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Merekam...&quot;</span><span class="p">)</span>
+    <span class="n">audio</span> <span class="o">=</span> <span class="n">sd</span><span class="o">.</span><span class="n">rec</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">durasi</span> <span class="o">*</span> <span class="n">sr</span><span class="p">),</span> <span class="n">samplerate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+    <span class="n">sd</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>  <span class="c1"># Menunggu rekaman selesai</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rekaman selesai.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">audio</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">simpan_audio</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">sr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Menyimpan audio ke file WAV.&quot;&quot;&quot;</span>
+    <span class="c1"># Normalisasi audio untuk menghindari clipping (jika terlalu keras)</span>
+    <span class="n">audio</span> <span class="o">=</span> <span class="n">audio</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">audio</span><span class="p">))</span>
+    <span class="c1"># Konversi ke 16-bit integer (format WAV standar)</span>
+    <span class="n">audio_int16</span> <span class="o">=</span> <span class="p">(</span><span class="n">audio</span> <span class="o">*</span> <span class="mi">32767</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">)</span>
+    <span class="n">wav</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sr</span><span class="p">,</span> <span class="n">audio_int16</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File disimpan di: </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Skrip Perekam Data Audio ---&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Target: </span><span class="si">{</span><span class="n">JUMLAH_SAMPEL</span><span class="si">}</span><span class="s2"> sampel per kata.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kata: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">KATA_TARGET</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Membuat folder data utama jika belum ada</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">FOLDER_DATA</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">FOLDER_DATA</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">kata</span> <span class="ow">in</span> <span class="n">KATA_TARGET</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">======= MULAI MEREKAM KATA: &#39;</span><span class="si">{</span><span class="n">kata</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&#39; =======&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Membuat sub-folder untuk setiap kata</span>
+        <span class="n">folder_kata</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">FOLDER_DATA</span><span class="p">,</span> <span class="n">kata</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">folder_kata</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">folder_kata</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data akan disimpan di folder: </span><span class="si">{</span><span class="n">folder_kata</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tekan ENTER untuk memulai rekaman pertama...&quot;</span><span class="p">)</span>
+        <span class="nb">input</span><span class="p">()</span> <span class="c1"># Menunggu kesiapan pengguna</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">JUMLAH_SAMPEL</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Merekam sampel ke-</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">JUMLAH_SAMPEL</span><span class="si">}</span><span class="s2"> untuk &#39;</span><span class="si">{</span><span class="n">kata</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&#39; ---&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Beri waktu pengguna untuk bersiap</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bersiap dalam 3...&quot;</span><span class="p">)</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2...&quot;</span><span class="p">)</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1...&quot;</span><span class="p">)</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;BICARA SEKARANG!&quot;</span><span class="p">)</span>
+
+                <span class="c1"># 1. Rekam</span>
+                <span class="n">audio_rekaman</span> <span class="o">=</span> <span class="n">rekam_audio</span><span class="p">(</span><span class="n">DURASI_REKAMAN</span><span class="p">,</span> <span class="n">SAMPLE_RATE</span><span class="p">)</span>
+                
+                <span class="c1"># 2. Simpan</span>
+                <span class="c1"># Format nama file: buka_001.wav, buka_002.wav, ...</span>
+                <span class="n">nama_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">kata</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="s2">03d</span><span class="si">}</span><span class="s2">.wav&quot;</span> 
+                <span class="n">path_file_lengkap</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder_kata</span><span class="p">,</span> <span class="n">nama_file</span><span class="p">)</span>
+                <span class="n">simpan_audio</span><span class="p">(</span><span class="n">audio_rekaman</span><span class="p">,</span> <span class="n">path_file_lengkap</span><span class="p">,</span> <span class="n">SAMPLE_RATE</span><span class="p">)</span>
+
+                <span class="c1"># Jeda singkat antar rekaman</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+            <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Proses dihentikan oleh pengguna.&quot;</span><span class="p">)</span>
+                <span class="k">return</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Terjadi error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mencoba lanjut ke sampel berikutnya...&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">======== PENGUMPULAN DATA SELESAI! ========&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Semua data tersimpan di folder &#39;</span><span class="si">{</span><span class="n">FOLDER_DATA</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Skrip Perekam Data Audio ---
+Target: 100 sampel per kata.
+Kata: buka, tutup
+----------------------------------
+
+
+======= MULAI MEREKAM KATA: &#39;BUKA&#39; =======
+Data akan disimpan di folder: ./dataset/data-hasil\buka
+Tekan ENTER untuk memulai rekaman pertama...
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">85</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Semua data tersimpan di folder &#39;</span><span class="si">{</span><span class="n">FOLDER_DATA</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span> <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">85</span>     <span class="n">main</span><span class="p">()</span>
+
+<span class="nn">Cell In[4], line 46,</span> in <span class="ni">main</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data akan disimpan di folder: </span><span class="si">{</span><span class="n">folder_kata</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tekan ENTER untuk memulai rekaman pertama...&quot;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="nb">input</span><span class="p">()</span> <span class="c1"># Menunggu kesiapan pengguna</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">JUMLAH_SAMPEL</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Merekam sampel ke-</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">JUMLAH_SAMPEL</span><span class="si">}</span><span class="s2"> untuk &#39;</span><span class="si">{</span><span class="n">kata</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&#39; ---&quot;</span><span class="p">)</span>
+
+<span class="nn">File D:\Laragon\laragon\bin\python\python-3.10\lib\site-packages\ipykernel\kernelbase.py:1274,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1272</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1273</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1274</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1275</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1276</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1277</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1278</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1279</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1280</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>librosa<span class="w"> </span>pandas<span class="w"> </span>numpy<span class="w"> </span>tqdm
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">librosa</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="c1"># Tentukan path ke folder data Anda</span>
+<span class="n">PATH_DATA</span> <span class="o">=</span> <span class="s2">&quot;./dataset/data-hasil/&quot;</span>
+<span class="n">LABELS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;buka&quot;</span><span class="p">,</span> <span class="s2">&quot;tutup&quot;</span><span class="p">]</span>
+<span class="n">SAMPLE_RATE</span> <span class="o">=</span> <span class="mi">22050</span>
+
+<span class="c1"># --- PENYESUAIAN ---</span>
+<span class="c1"># Mengubah jumlah MFCC dari 13 menjadi 20</span>
+<span class="n">N_MFCC</span> <span class="o">=</span> <span class="mi">20</span> 
+<span class="c1"># -------------------</span>
+
+<span class="c1"># Siapkan list untuk menampung data</span>
+<span class="n">data_fitur</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">data_label</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Memulai ekstraksi fitur MFCC (n_mfcc=</span><span class="si">{</span><span class="n">N_MFCC</span><span class="si">}</span><span class="s2">)...&quot;</span><span class="p">)</span>
+
+<span class="c1"># Looping untuk setiap label (buka, tutup)</span>
+<span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">LABELS</span><span class="p">:</span>
+    <span class="n">folder_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">PATH_DATA</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+    
+    <span class="c1"># Dapatkan semua nama file di dalam folder</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder_path</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.wav&#39;</span><span class="p">)]</span>
+    
+    <span class="c1"># Gunakan tqdm untuk melihat progress bar</span>
+    <span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Processing </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+            
+            <span class="c1"># 1. Muat file audio</span>
+            <span class="n">y</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">SAMPLE_RATE</span><span class="p">)</span>
+            
+            <span class="c1"># 2. Ekstrak fitur MFCC (dengan n_mfcc=20)</span>
+            <span class="n">mfccs</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">mfcc</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">n_mfcc</span><span class="o">=</span><span class="n">N_MFCC</span><span class="p">)</span>
+            
+            <span class="c1"># 3. Ambil rata-rata MFCC di semua frame</span>
+            <span class="n">mfccs_rata_rata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">mfccs</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            
+            <span class="c1"># 4. Simpan fitur dan label</span>
+            <span class="n">data_fitur</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mfccs_rata_rata</span><span class="p">)</span>
+            <span class="n">data_label</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+            
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error memproses file </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Ekstraksi fitur selesai.&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- Konversi ke DataFrame Pandas ---</span>
+
+<span class="c1"># Buat DataFrame dari list fitur</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_fitur</span><span class="p">)</span>
+
+<span class="c1"># Beri nama kolom (mfcc_0, mfcc_1, ..., mfcc_19)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">add_prefix</span><span class="p">(</span><span class="s1">&#39;mfcc_&#39;</span><span class="p">)</span>
+
+<span class="c1"># Tambahkan kolom label</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_label</span>
+
+<span class="c1"># --- Simpan ke CSV ---</span>
+<span class="n">NAMA_FILE_CSV</span> <span class="o">=</span> <span class="s2">&quot;./dataset/data-hasil/fitur_audio_20mfcc.csv&quot;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">NAMA_FILE_CSV</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data fitur berhasil disimpan ke </span><span class="si">{</span><span class="n">NAMA_FILE_CSV</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Contoh 5 data pertama:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Memulai ekstraksi fitur MFCC (n_mfcc=20)...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing buka: 100%|██████████| 100/100 [00:02&lt;00:00, 46.00it/s]
+Processing tutup: 100%|██████████| 100/100 [00:01&lt;00:00, 65.54it/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ekstraksi fitur selesai.
+Data fitur berhasil disimpan ke ./dataset/data-hasil/fitur_audio_20mfcc.csv
+
+Contoh 5 data pertama:
+       mfcc_0     mfcc_1     mfcc_2     mfcc_3     mfcc_4     mfcc_5  \
+0 -391.825195  86.733055  21.756060  13.757183   9.030744  12.091555   
+1 -219.554581  95.143524  23.050543  11.273750  12.111441   7.253877   
+2 -231.499649  95.491196  21.786690  16.874832   9.731382  10.766232   
+3 -239.903519  93.402954  20.391285  14.796158   7.593359   8.971307   
+4 -239.522278  96.243011  13.798207  11.316676   9.502037   7.641552   
+
+      mfcc_6    mfcc_7    mfcc_8    mfcc_9  ...   mfcc_11   mfcc_12   mfcc_13  \
+0  12.048173  0.365709  1.737657  5.475190  ... -6.118983 -5.571948 -4.757148   
+1  12.820862 -2.045698 -0.279506  7.276806  ... -7.047171 -9.191520 -6.422854   
+2  14.763392  2.315336  0.482845  3.260504  ... -1.712604 -7.362328 -1.683394   
+3  12.700639 -0.081058  0.001442  4.289254  ... -2.979377 -8.099751 -2.410700   
+4  16.703917  0.591387 -1.314283  5.297466  ... -1.369699 -7.202394 -7.726523   
+
+    mfcc_14   mfcc_15   mfcc_16   mfcc_17   mfcc_18   mfcc_19  label  
+0 -3.288465 -0.071312 -0.128426 -6.077927 -2.441211 -3.030537   buka  
+1 -3.832167 -0.068076 -3.157759 -4.752992 -6.085726 -4.260391   buka  
+2 -0.336681 -2.163007 -2.262357 -2.684976 -4.889982 -5.064355   buka  
+3 -0.211259 -2.033857 -2.743744 -4.011409 -4.766405 -5.796066   buka  
+4  0.504600 -3.000539 -4.273159 -3.424908 -4.315732 -7.084563   buka  
+
+[5 rows x 21 columns]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>scikit-learn<span class="w"> </span>joblib
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.svm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">joblib</span>
+
+<span class="c1"># --- 1. Muat Data ---</span>
+<span class="n">NAMA_FILE_CSV</span> <span class="o">=</span> <span class="s2">&quot;./dataset/data-hasil/fitur_audio_20mfcc.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">NAMA_FILE_CSV</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data berhasil dimuat:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># --- 2. Pra-pemrosesan Data ---</span>
+
+<span class="c1"># Pisahkan fitur (X) dan label (y)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Ambil semua kolom kecuali &#39;label&#39;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
+
+<span class="c1"># Ubah label &quot;buka&quot; dan &quot;tutup&quot; menjadi angka (misal: 0 dan 1)</span>
+<span class="c1"># Ini WAJIB karena model hanya mengerti angka</span>
+<span class="n">encoder</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="n">y_encoded</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Mari kita lihat kelasnya (0 itu apa, 1 itu apa)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Kelas label: </span><span class="si">{</span><span class="n">encoder</span><span class="o">.</span><span class="n">classes_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Ini akan mencetak sesuatu seperti: [&#39;buka&#39; &#39;tutup&#39;]</span>
+<span class="c1"># Artinya: &#39;buka&#39; = 0, &#39;tutup&#39; = 1</span>
+
+<span class="c1"># --- 3. Bagi Data (Train &amp; Test Split) ---</span>
+<span class="c1"># Kita akan gunakan 80% data untuk melatih model, 20% untuk menguji</span>
+<span class="c1"># stratify=y_encoded: Memastikan proporsi &#39;buka&#39; dan &#39;tutup&#39; seimbang di data latih dan uji</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y_encoded</span><span class="p">,</span> 
+                                                    <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> 
+                                                    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> 
+                                                    <span class="n">stratify</span><span class="o">=</span><span class="n">y_encoded</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Bentuk data latih (X_train): </span><span class="si">{</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bentuk data tes (X_test):   </span><span class="si">{</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 4. Buat dan Latih Model ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Memulai pelatihan model SVC...&quot;</span><span class="p">)</span>
+
+<span class="c1"># Kita gunakan SVC (Support Vector Classifier)</span>
+<span class="c1"># kernel=&#39;linear&#39; biasanya bekerja baik untuk data teks/audio</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+
+<span class="c1"># Latih model menggunakan data latih</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pelatihan model selesai.&quot;</span><span class="p">)</span>
+
+<span class="c1"># --- 5. Evaluasi Model ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Hasil Evaluasi Model ---&quot;</span><span class="p">)</span>
+<span class="c1"># Gunakan model yang sudah dilatih untuk menebak data tes</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Hitung akurasi</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi Model: </span><span class="si">{</span><span class="n">accuracy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan laporan detail (precision, recall, f1-score)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Classification Report:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="n">encoder</span><span class="o">.</span><span class="n">classes_</span><span class="p">))</span>
+
+<span class="c1"># Tampilkan Confusion Matrix</span>
+<span class="c1"># Ini menunjukkan berapa banyak &#39;buka&#39; yang ditebak benar &#39;buka&#39;,</span>
+<span class="c1"># berapa &#39;buka&#39; yang salah tebak jadi &#39;tutup&#39;, dst.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Confusion Matrix:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+
+<span class="c1"># --- 6. Simpan Model ---</span>
+<span class="c1"># Ini adalah langkah KRUSIAL untuk implementasi Streamlit</span>
+<span class="n">NAMA_FILE_MODEL</span> <span class="o">=</span> <span class="s1">&#39;./dataset/data-hasil/model_audio.pkl&#39;</span>
+<span class="n">NAMA_FILE_ENCODER</span> <span class="o">=</span> <span class="s1">&#39;./dataset/data-hasil/label_encoder.pkl&#39;</span>
+
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">NAMA_FILE_MODEL</span><span class="p">)</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">encoder</span><span class="p">,</span> <span class="n">NAMA_FILE_ENCODER</span><span class="p">)</span> <span class="c1"># Kita juga simpan encoder-nya!</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Model berhasil disimpan ke: </span><span class="si">{</span><span class="n">NAMA_FILE_MODEL</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Encoder berhasil disimpan ke: </span><span class="si">{</span><span class="n">NAMA_FILE_ENCODER</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data berhasil dimuat:
+      mfcc_0     mfcc_1     mfcc_2     mfcc_3     mfcc_4     mfcc_5  \
+0 -391.82520  86.733055  21.756060  13.757183   9.030744  12.091555   
+1 -219.55458  95.143524  23.050543  11.273750  12.111441   7.253877   
+2 -231.49965  95.491196  21.786690  16.874832   9.731382  10.766232   
+3 -239.90352  93.402954  20.391285  14.796158   7.593359   8.971307   
+4 -239.52228  96.243010  13.798207  11.316676   9.502037   7.641552   
+
+      mfcc_6    mfcc_7    mfcc_8    mfcc_9  ...   mfcc_11   mfcc_12   mfcc_13  \
+0  12.048173  0.365709  1.737657  5.475190  ... -6.118983 -5.571948 -4.757148   
+1  12.820862 -2.045698 -0.279506  7.276806  ... -7.047171 -9.191520 -6.422854   
+2  14.763392  2.315336  0.482845  3.260504  ... -1.712604 -7.362328 -1.683394   
+3  12.700639 -0.081058  0.001442  4.289254  ... -2.979377 -8.099751 -2.410700   
+4  16.703917  0.591387 -1.314283  5.297466  ... -1.369699 -7.202394 -7.726523   
+
+    mfcc_14   mfcc_15   mfcc_16   mfcc_17   mfcc_18   mfcc_19  label  
+0 -3.288464 -0.071312 -0.128426 -6.077927 -2.441212 -3.030537   buka  
+1 -3.832167 -0.068076 -3.157759 -4.752992 -6.085726 -4.260391   buka  
+2 -0.336681 -2.163006 -2.262357 -2.684976 -4.889982 -5.064355   buka  
+3 -0.211259 -2.033857 -2.743744 -4.011409 -4.766405 -5.796066   buka  
+4  0.504600 -3.000539 -4.273159 -3.424908 -4.315732 -7.084563   buka  
+
+[5 rows x 21 columns]
+
+Kelas label: [&#39;buka&#39; &#39;tutup&#39;]
+
+Bentuk data latih (X_train): (160, 20)
+Bentuk data tes (X_test):   (40, 20)
+
+Memulai pelatihan model SVC...
+Pelatihan model selesai.
+
+--- Hasil Evaluasi Model ---
+Akurasi Model: 97.50%
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        buka       1.00      0.95      0.97        20
+       tutup       0.95      1.00      0.98        20
+
+    accuracy                           0.97        40
+   macro avg       0.98      0.97      0.97        40
+weighted avg       0.98      0.97      0.97        40
+
+
+Confusion Matrix:
+[[19  1]
+ [ 0 20]]
+
+Model berhasil disimpan ke: ./dataset/data-hasil/model_audio.pkl
+Encoder berhasil disimpan ke: ./dataset/data-hasil/label_encoder.pkl
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="forecasting2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Forecasting</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

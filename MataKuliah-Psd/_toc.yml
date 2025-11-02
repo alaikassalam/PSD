@@ -14,3 +14,8 @@ chapters:
     - file: abod
     - file: oversampling
 - file: forecasting
+  sections:
+    - file: forecasting2
+    - file: audio
+    - file: app
+
