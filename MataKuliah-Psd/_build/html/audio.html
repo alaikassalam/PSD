@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; My sample book</title>
+    <title>Klasifikasi Perintah Suara &#8212; My sample book</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'audio';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Forecasting" href="forecasting2.html" />
+    <link rel="prev" title="Forecasting dengan AutoKorelasi" href="forecasting2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,7 +178,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="businessUnderstanding.html">Business Understanding</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="dataUnderstanding.html">Data Understanding</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="explorasiData.html">Explorasi Data</a></li>
@@ -192,8 +192,9 @@
 
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="forecasting.html">Forecasting</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="forecasting2.html">Forecasting</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="forecasting.html">Forecasting</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="forecasting2.html">Forecasting dengan AutoKorelasi</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Klasifikasi Perintah Suara</a></li>
 </ul>
 </details></li>
 </ul>
@@ -381,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Klasifikasi Perintah Suara</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -390,9 +391,12 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skrip-perekam-data-audio">Skrip Perekam Data Audio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-versi-20-mfcc">Ekstraksi Fitur (Versi 20 MFCC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pelatihan-evaluasi-dan-penyimpanan-model-svc">Pelatihan, Evaluasi, dan Penyimpanan Model (SVC)</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -403,7 +407,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="klasifikasi-perintah-suara">
+<h1>Klasifikasi Perintah Suara<a class="headerlink" href="#klasifikasi-perintah-suara" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>jupyterlab<span class="w"> </span>streamlit<span class="w"> </span>librosa<span class="w"> </span>scikit-learn<span class="w"> </span>sounddevice<span class="w"> </span>numpy<span class="w"> </span>scipy
 </pre></div>
@@ -567,6 +573,9 @@ Requirement already satisfied: pycparser in d:\laragon\laragon\bin\python\python
 </div>
 </div>
 </div>
+<section id="import-library">
+<h2>Import Library<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h2>
+<p>Cell ini berfungsi untuk mengimpor semua library Python yang diperlukan untuk proyek ini, seperti <code class="docutils literal notranslate"><span class="pre">librosa</span></code> untuk analisis audio, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dan <code class="docutils literal notranslate"><span class="pre">numpy</span></code> untuk manipulasi data, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> untuk visualisasi, dan <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> untuk pemodelan machine learning.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sounddevice</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sd</span>
@@ -578,6 +587,11 @@ Requirement already satisfied: pycparser in d:\laragon\laragon\bin\python\python
 </div>
 </div>
 </div>
+</section>
+<section id="skrip-perekam-data-audio">
+<h2>Skrip Perekam Data Audio<a class="headerlink" href="#skrip-perekam-data-audio" title="Link to this heading">#</a></h2>
+<p>Cell ini berfungsi sebagai alat bantu untuk akuisisi (pengumpulan) data.<br />
+Tujuannya adalah untuk merekam dan membuat dataset audio secara otomatis.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Konfigurasi ---</span>
@@ -710,13 +724,10 @@ Tekan ENTER untuk memulai rekaman pertama...
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>librosa<span class="w"> </span>pandas<span class="w"> </span>numpy<span class="w"> </span>tqdm
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+<section id="ekstraksi-fitur-versi-20-mfcc">
+<h2>Ekstraksi Fitur (Versi 20 MFCC)<a class="headerlink" href="#ekstraksi-fitur-versi-20-mfcc" title="Link to this heading">#</a></h2>
+<p>Cell kode ini adalah skrip alternatif yang lebih lengkap untuk melakukan ekstraksi fitur. Berbeda dengan di notebook (yang menggunakan 13 MFCC), skrip ini dikonfigurasi untuk mengekstrak 20 MFCC (N_MFCC = 20) untuk analisis yang berpotensi lebih detail.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">librosa</span>
@@ -833,13 +844,10 @@ Contoh 5 data pertama:
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>scikit-learn<span class="w"> </span>joblib
-</pre></div>
-</div>
-</div>
-</div>
+</section>
+<section id="pelatihan-evaluasi-dan-penyimpanan-model-svc">
+<h2>Pelatihan, Evaluasi, dan Penyimpanan Model (SVC)<a class="headerlink" href="#pelatihan-evaluasi-dan-penyimpanan-model-svc" title="Link to this heading">#</a></h2>
+<p>Cell kode ini adalah alur kerja machine learning lengkap. Tujuannya adalah untuk melatih model klasifikasi, menguji performanya, dan menyimpannya ke disk agar dapat digunakan nanti.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -984,6 +992,8 @@ Encoder berhasil disimpan ke: ./dataset/data-hasil/label_encoder.pkl
 </div>
 </div>
 </div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1021,7 +1031,7 @@ Encoder berhasil disimpan ke: ./dataset/data-hasil/label_encoder.pkl
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Forecasting</p>
+        <p class="prev-next-title">Forecasting dengan AutoKorelasi</p>
       </div>
     </a>
 </div>
@@ -1039,9 +1049,12 @@ Encoder berhasil disimpan ke: ./dataset/data-hasil/label_encoder.pkl
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skrip-perekam-data-audio">Skrip Perekam Data Audio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-versi-20-mfcc">Ekstraksi Fitur (Versi 20 MFCC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pelatihan-evaluasi-dan-penyimpanan-model-svc">Pelatihan, Evaluasi, dan Penyimpanan Model (SVC)</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

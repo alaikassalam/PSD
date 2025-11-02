@@ -89,7 +89,7 @@ Traceback (most recent call last):  File "D:\Laragon\laragon\bin\python\python-3
     if await self.run_code(code, result, async_=asy):
   File "D:\Laragon\laragon\bin\python\python-3.10\lib\site-packages\IPython\core\interactiveshell.py", line 3579, in run_code
     exec(code_obj, self.user_global_ns, self.user_ns)
-  File "C:\Users\ASUS\AppData\Local\Temp\ipykernel_14408\3120439038.py", line 7, in <module>
+  File "C:\Users\ASUS\AppData\Local\Temp\ipykernel_14200\3120439038.py", line 7, in <module>
     import matplotlib.pyplot as plt
   File "D:\Laragon\laragon\bin\python\python-3.10\lib\site-packages\matplotlib\__init__.py", line 142, in <module>
     from . import _api, _version, cbook, _docstring, rcsetup
